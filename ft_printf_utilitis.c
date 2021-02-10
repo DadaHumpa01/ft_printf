@@ -25,9 +25,9 @@ int		ft_stampo_stringhe(const char *str, t_mastronzo *dado)
 	return (1);
 }
 
-size_t		ft_strlen(const char *str)
+int		ft_strlen(const char *str)
 {
-	size_t i;
+	int i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -38,7 +38,7 @@ size_t		ft_strlen(const char *str)
 void		reset(t_mastronzo *dado)
 {
 	dado->width = 0;
-	dado->precisione = 0;
+	dado->precisione = -1;
 	dado->meno = 0;
 	dado->zero = 0;
 }

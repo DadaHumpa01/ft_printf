@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 09:07:46 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/08 15:06:18 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/10 16:57:20 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 int		flag_ricerca(const char *str, size_t i, t_mastronzo *dado,
 			va_list lista)
 {
-	if (str[i] == '0')
-	{
-		dado->zero = 1;
-		i++;
-	}
 	if (str[i] == '-')
 	{
 		dado->meno = 1;
+		i++;
+	}
+	if (str[i] == '0')
+	{
+		dado->zero = 1;
 		i++;
 	}
 	if (str[i] == '*' || (str[i] >= '1' && str[i] <= '9'))
@@ -34,9 +34,9 @@ int		flag_ricerca(const char *str, size_t i, t_mastronzo *dado,
 
 int		ricercatore(const char *str, size_t i, va_list lista, t_mastronzo *dado)
 {
-	if (str[i] == 'c')
+	if (str[i] == 'c')								//finito
 		carattere(lista, dado);
-	else if (str[i] == 'd' || str[i] == 'i')       //levati dal cazzo
+	else if (str[i] == 'd' || str[i] == 'i')       //in corso
 		interi(lista, dado);
 	else if (str[i] == 'x')
 		esa_min(lista, dado);
@@ -44,11 +44,11 @@ int		ricercatore(const char *str, size_t i, va_list lista, t_mastronzo *dado)
 		esa_man(lista, dado);
 	else if (str[i] == 'u')
 		unsigned_int(lista, dado);
-	else if (str[i] == 's')
+	else if (str[i] == 's')							//in corso
 		putstr(lista, dado);
-	else if (str[i] == '%')
-		write(1, "%", 1);
-	else if (str[i] == 'p')
+	else if (str[i] == '%')							//finito
+		perct(dado);								
+	else if (str[i] == 'p')							//finito
 		pointer(lista, dado);
 	return (i);
 }
@@ -84,10 +84,4 @@ int		ft_printf(const char *str, ...)
 	iter(str, lista, &dado);
 	va_end(lista);
 	return (dado.ritorno);
-}
-
-int main(void)
-{
-	printf("%5.2s\n", NULL);
-	ft_printf("%5s", NULL);
 }

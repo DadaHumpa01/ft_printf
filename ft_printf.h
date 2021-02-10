@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 09:15:59 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/08 14:08:41 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/10 16:12:13 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,16 @@ char				*itoa_unsigned(unsigned int num);
 int					unsigned_int(va_list lista, t_mastronzo *dado);
 int					precision(const char *str, t_mastronzo *dado, size_t i,
 						va_list lista);
-size_t				ft_strlen(const char *str);
+int					ft_strlen(const char *str);
 int					mod_atoi(const char *str, t_mastronzo *dado, size_t i,
 						int type);
 int					width(const char *str, size_t i, t_mastronzo *dado,
 						va_list lista);
 void				volare(int car, int sing, t_mastronzo *dado);
 void				reset(t_mastronzo *dado);
+void				test(char *str, t_mastronzo *dado);
+void				cond2(char *str, t_mastronzo *dado);
+void				cond3(char *str, t_mastronzo *dado);
+int					perct(t_mastronzo *dado);
 
 #endif

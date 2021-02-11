@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 09:07:46 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/10 16:57:20 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/11 18:05:49 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 int		flag_ricerca(const char *str, size_t i, t_mastronzo *dado,
 			va_list lista)
 {
-	if (str[i] == '-')
+	while (str[i] == '0' || str[i] == '-')
 	{
-		dado->meno = 1;
-		i++;
-	}
-	if (str[i] == '0')
-	{
-		dado->zero = 1;
+		if (str[i] == '-')
+			dado->meno = 1;
+		else if (str[i] == '0')
+			dado->zero = 1;
 		i++;
 	}
 	if (str[i] == '*' || (str[i] >= '1' && str[i] <= '9'))
@@ -44,10 +42,10 @@ int		ricercatore(const char *str, size_t i, va_list lista, t_mastronzo *dado)
 		esa_man(lista, dado);
 	else if (str[i] == 'u')
 		unsigned_int(lista, dado);
-	else if (str[i] == 's')							//in corso
+	else if (str[i] == 's')							//quasi finito
 		putstr(lista, dado);
 	else if (str[i] == '%')							//finito
-		perct(dado);								
+		perct(dado);							
 	else if (str[i] == 'p')							//finito
 		pointer(lista, dado);
 	return (i);
@@ -83,5 +81,14 @@ int		ft_printf(const char *str, ...)
 	va_start(lista, str);
 	iter(str, lista, &dado);
 	va_end(lista);
+	printf("%d\n", dado.precisione);
+	printf("%d\n", dado.meno);
+	printf("%d\n", dado.zero);
+	printf("%d\n", dado.width);
 	return (dado.ritorno);
+}
+
+int		main(void)
+{
+	ft_printf("%000000053x\n", 430);
 }

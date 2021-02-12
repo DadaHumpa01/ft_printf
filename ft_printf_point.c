@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 16:45:32 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/10 16:53:03 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/12 18:13:19 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ void	point_flag2(char *str, t_mastronzo *dado)
 		{
 			dado->width -= 1;
 			write(1, " ", 1);
+			dado->ritorno += 1;
 		}
 		write(1, "0x", 2);
+		dado->ritorno += 2;
 		while (str[i] != 0)
 		{
 			write(1, &str[i++], 1);
@@ -32,11 +34,9 @@ void	point_flag2(char *str, t_mastronzo *dado)
 	}
 	else
 	{
+		dado->ritorno += 2;
 		write(1, "0x", 2);
-		while (str[i] != 0)
-		{
-			write(1, &str[i++], 1);
-		}
+		ft_stampo_stringhe(str, dado);
 	}
 }
 
@@ -48,16 +48,15 @@ void	point_flag(char *str, t_mastronzo *dado)
 	if (dado->meno == 1)
 	{
 		write(1, "0x", 2);
-		while (str[i] != 0)
-		{
-			write(1, &str[i++], 1);
-		}
+		dado->ritorno += 2;
+		ft_stampo_stringhe(str, dado);
 		if (dado->width > ft_strlen(str) + 2)
 		{
 			while (dado->width != ft_strlen(str) + 2)
 			{
 				dado->width -= 1;
 				write(1, " ", 1);
+				dado->ritorno += 1;
 			}
 		}
 	}

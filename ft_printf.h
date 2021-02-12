@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 09:15:59 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/12 12:14:36 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/12 17:31:46 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,5 @@ int					perct(t_mastronzo *dado);
 void				prec_with(t_mastronzo *dado);
 void				prima_fase_stampa(char *str, t_mastronzo *dado);
 void				zeroo(char *str, t_mastronzo *dado);
+
 #endif

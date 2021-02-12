@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 10:36:49 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/11 12:33:32 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/12 17:51:16 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		width(const char *str, size_t i, t_mastronzo *dado, va_list lista)
 			val = va_arg(lista, int);
 			if (val < 0)
 			{
-				dado->meno += 1;
+				dado->meno = 1;
 				val = val * (-1);
 			}
 			dado->width += val;

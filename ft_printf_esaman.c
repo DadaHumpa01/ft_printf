@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 11:17:56 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/12 12:15:46 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/12 16:49:46 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	zeroo(char *str, t_mastronzo *dado)
 {
 	while (dado->width != ft_strlen(str))
 	{
+		dado->ritorno += 1;
 		dado->width -= 1;
 		write(1, "0", 1);
 	}

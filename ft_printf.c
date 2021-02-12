@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 09:07:46 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/12 11:30:53 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/12 18:13:40 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,21 @@ int		flag_ricerca(const char *str, size_t i, t_mastronzo *dado,
 
 int		ricercatore(const char *str, size_t i, va_list lista, t_mastronzo *dado)
 {
-	if (str[i] == 'c')								//finito
+	if (str[i] == 'c')
 		carattere(lista, dado);
-	else if (str[i] == 'd' || str[i] == 'i')       //in corso
+	else if (str[i] == 'd' || str[i] == 'i')
 		interi(lista, dado);
-	else if (str[i] == 'x')							//finito
+	else if (str[i] == 'x')
 		esa_min(lista, dado);
-	else if (str[i] == 'X')							//finito
+	else if (str[i] == 'X')
 		esa_man(lista, dado);
-	else if (str[i] == 'u')							//finito
+	else if (str[i] == 'u')
 		unsigned_int(lista, dado);
-	else if (str[i] == 's')							//quasi finito
+	else if (str[i] == 's')
 		putstr(lista, dado);
-	else if (str[i] == '%')							//finito
-		perct(dado);							
-	else if (str[i] == 'p')							//finito
+	else if (str[i] == '%')
+		perct(dado);
+	else if (str[i] == 'p')
 		pointer(lista, dado);
 	return (i);
 }
@@ -79,6 +79,7 @@ int		ft_printf(const char *str, ...)
 	t_mastronzo dado;
 
 	va_start(lista, str);
+	dado.ritorno = 0;
 	iter(str, lista, &dado);
 	va_end(lista);
 	return (dado.ritorno);

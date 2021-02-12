@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 11:18:02 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/12 12:17:42 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/12 15:52:45 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int		esa_min(va_list lista, t_mastronzo *dado)
 	char	*str_num;
 	int		i;
 
-	i = va_arg(lista, int);
+	i = va_arg(lista, unsigned int);
 	str_num = ft_itoa_esa(i);
 	prima_fase_stampa(str_num, dado);
 	free(str_num);

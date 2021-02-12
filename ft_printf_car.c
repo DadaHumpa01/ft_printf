@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 09:05:26 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/10 13:18:48 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/12 17:50:14 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,20 @@ void	zero(t_mastronzo *dado)
 		{
 			dado->width -= 1;
 			write(1, "0", 1);
+			dado->ritorno += 1;
 		}
 		write(1, "%", 1);
+		dado->ritorno += 1;
 	}
 	else
 	{
 		write(1, "%", 1);
+		dado->ritorno += 1;
 		while (dado->width != 1)
 		{
 			dado->width -= 1;
 			write(1, "0", 1);
+			dado->ritorno += 1;
 		}
 	}
 }
@@ -37,23 +41,30 @@ void	zero(t_mastronzo *dado)
 int		perct(t_mastronzo *dado)
 {
 	if (dado->width == 0)
+	{
 		write(1, "%", 1);
+		dado->ritorno += 1;
+	}
 	else if (dado->width > 0 && dado->meno == 0 && dado->zero == 0)
 	{
 		while (dado->width != 1)
 		{
 			write(1, " ", 1);
 			dado->width -= 1;
+			dado->ritorno += 1;
 		}
 		write(1, "%", 1);
+		dado->ritorno += 1;
 	}
 	else if (dado->meno == 1)
 	{
 		write(1, "%", 1);
+		dado->ritorno += 1;
 		while (dado->width != 1)
 		{
 			write(1, " ", 1);
 			dado->width -= 1;
+			dado->ritorno += 1;
 		}
 	}
 	else
@@ -94,8 +105,6 @@ int		carattere(va_list lista, t_mastronzo *dado)
 	car = va_arg(lista, int);
 	if (dado->width != 0)
 	{
-		if (dado->width < 0)
-			dado->width = dado->width * (-1);
 		if (dado->meno == 1)
 			volare(car, 1, dado);
 		if (dado->meno == 0)

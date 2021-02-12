@@ -6,21 +6,19 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 11:16:26 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/01/29 16:38:28 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/12 10:59:37 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		linnum(int num)
+int		linnum(unsigned int num)
 {
 	int count;
 
 	count = 0;
 	if (num == 0)
 		count += 1;
-	if (num <= -1)
-		count = count + 1;
 	while (num != 0)
 	{
 		num = num / 16;
@@ -29,12 +27,12 @@ int		linnum(int num)
 	return (count);
 }
 
-char	*ft_write_itoa(int lenim, int neg, unsigned int num, char *str)
+char	*ft_write_itoa(int lenim, unsigned int num, char *str)
 {
 	int	patty;
 
 	str[lenim] = '\0';
-	while (lenim >= (0 + neg))
+	while (lenim >= 0)
 	{
 		patty = num % 16;
 		num = num / 16;
@@ -46,28 +44,19 @@ char	*ft_write_itoa(int lenim, int neg, unsigned int num, char *str)
 			str[lenim - 1] = patty + '0';
 		lenim--;
 	}
-	if (neg == 1)
-		str[0] = '-';
 	return (str);
 }
 
-char	*ft_itoa_esa(int num)
+char	*ft_itoa_esa(unsigned int num)
 {
 	char			*str;
 	int				lenim;
-	int				neg;
 	unsigned int	n;
 
-	neg = 0;
 	lenim = linnum(num);
 	n = num;
-	if (num < 0)
-	{
-		neg += 1;
-		n = num * (-1);
-	}
 	if (!(str = malloc(sizeof(char) * (lenim + 1))))
 		return (NULL);
-	ft_write_itoa(lenim, neg, n, str);
+	ft_write_itoa(lenim, n, str);
 	return (str);
 }

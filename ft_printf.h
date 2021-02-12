@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 09:15:59 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/11 09:36:44 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/12 12:14:36 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char				*ft_itoa(int num);
 int					interi(va_list lista, t_mastronzo *dado);
 int					carattere(va_list lista, t_mastronzo *dado);
 int					putstr(va_list lista, t_mastronzo *dado);
-char				*ft_itoa_esa(int num);
+char				*ft_itoa_esa(unsigned int num);
 int					esa_min(va_list lista, t_mastronzo *dado);
 int					esa_man(va_list lista, t_mastronzo *dado);
 int					ft_stampo_stringhe(const char *str, t_mastronzo *dado);
@@ -51,5 +51,7 @@ void				volare(int car, int sing, t_mastronzo *dado);
 void				reset(t_mastronzo *dado);
 void				test(char *str, t_mastronzo *dado, size_t i);
 int					perct(t_mastronzo *dado);
-
+void				prec_with(t_mastronzo *dado);
+void				prima_fase_stampa(char *str, t_mastronzo *dado);
+void				zeroo(char *str, t_mastronzo *dado);
 #endif

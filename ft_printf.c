@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 09:07:46 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/11 18:05:49 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/12 11:30:53 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int		ricercatore(const char *str, size_t i, va_list lista, t_mastronzo *dado)
 		carattere(lista, dado);
 	else if (str[i] == 'd' || str[i] == 'i')       //in corso
 		interi(lista, dado);
-	else if (str[i] == 'x')
+	else if (str[i] == 'x')							//finito
 		esa_min(lista, dado);
-	else if (str[i] == 'X')
+	else if (str[i] == 'X')							//finito
 		esa_man(lista, dado);
-	else if (str[i] == 'u')
+	else if (str[i] == 'u')							//finito
 		unsigned_int(lista, dado);
 	else if (str[i] == 's')							//quasi finito
 		putstr(lista, dado);
@@ -81,14 +81,5 @@ int		ft_printf(const char *str, ...)
 	va_start(lista, str);
 	iter(str, lista, &dado);
 	va_end(lista);
-	printf("%d\n", dado.precisione);
-	printf("%d\n", dado.meno);
-	printf("%d\n", dado.zero);
-	printf("%d\n", dado.width);
 	return (dado.ritorno);
-}
-
-int		main(void)
-{
-	ft_printf("%000000053x\n", 430);
 }

@@ -6,17 +6,34 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 16:45:32 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/12 18:13:19 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/14 17:59:54 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+void	point_flag3(t_mastronzo *dado)
+{
+	if (dado->width > 2)
+	{
+		while (dado->width != 2)
+		{
+			write(1, " ", 1);
+			dado->width -= 1;
+			dado->ritorno += 1;
+		}
+		write(1, "0x", 2);
+		dado->ritorno += 2;
+	}
+	else
+	{
+		write(1, "0x", 2);
+		dado->ritorno += 2;
+	}
+}
+
 void	point_flag2(char *str, t_mastronzo *dado)
 {
-	size_t i;
-
-	i = 0;
 	if (dado->width > ft_strlen(str) + 2)
 	{
 		while (dado->width != ft_strlen(str) + 2)
@@ -27,10 +44,7 @@ void	point_flag2(char *str, t_mastronzo *dado)
 		}
 		write(1, "0x", 2);
 		dado->ritorno += 2;
-		while (str[i] != 0)
-		{
-			write(1, &str[i++], 1);
-		}
+		ft_stampo_stringhe(str, dado);
 	}
 	else
 	{
@@ -42,9 +56,6 @@ void	point_flag2(char *str, t_mastronzo *dado)
 
 void	point_flag(char *str, t_mastronzo *dado)
 {
-	size_t i;
-
-	i = 0;
 	if (dado->meno == 1)
 	{
 		write(1, "0x", 2);
@@ -60,10 +71,10 @@ void	point_flag(char *str, t_mastronzo *dado)
 			}
 		}
 	}
-	else
-	{
+	else if (dado->meno == 0 && dado->precisione != 0)
 		point_flag2(str, dado);
-	}
+	else
+		point_flag3(dado);
 }
 
 int	pointer(va_list lista, t_mastronzo *dado)

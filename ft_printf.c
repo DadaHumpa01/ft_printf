@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 09:07:46 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/12 18:13:40 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/14 18:06:38 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int		ricercatore(const char *str, size_t i, va_list lista, t_mastronzo *dado)
 		perct(dado);
 	else if (str[i] == 'p')
 		pointer(lista, dado);
+	else
+		return (i - 1);
 	return (i);
 }
 

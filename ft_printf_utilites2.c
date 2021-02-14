@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_width.c                                         :+:      :+:    :+:   */
+/*   ft_printf_utilites2.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/04 10:36:49 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/14 16:51:26 by dbrignon         ###   ########.fr       */
+/*   Created: 2021/02/14 14:44:35 by dbrignon          #+#    #+#             */
+/*   Updated: 2021/02/14 16:32:03 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		width(const char *str, size_t i, t_mastronzo *dado, va_list lista)
+int		ft_stampo_stringhe_neg(char *str, t_mastronzo *dado)
 {
-	int val;
-	int stop;
+	size_t i;
 
-	stop = 0;
-	val = 0;
-	while (str[i] != 0 && stop != 1)
+	i = 1;
+	while (str[i] != '\0')
 	{
-		if (str[i] == '*')
-		{
-			val = va_arg(lista, int);
-			if (val < 0)
-			{
-				dado->meno = 1;
-				val = -val;
-			}
-			dado->width = val;
-			return (i + 1);
-		}
-		else
-		{
-			i = mod_atoi(str, dado, i, 2);
-			stop += 1;
-		}
+		dado->ritorno += 1;
+		write(1, &str[i++], 1);
 	}
-	return (i);
+	return (1);
+}
+
+void	zeroo_neg(char *str, t_mastronzo *dado)
+{
+	dado->ritorno += 1;
+	write(1, "-", 1);
+	while (dado->width != ft_strlen(str))
+	{
+		dado->ritorno += 1;
+		dado->width -= 1;
+		write(1, "0", 1);
+	}
+	ft_stampo_stringhe_neg(str, dado);
 }

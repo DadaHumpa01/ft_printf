@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 09:05:26 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/12 17:50:14 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/16 11:36:49 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,18 @@ void	zero(t_mastronzo *dado)
 	}
 }
 
+void	split_perct(t_mastronzo *dado)
+{
+	write(1, "%", 1);
+	dado->ritorno += 1;
+	while (dado->width != 1)
+	{
+		write(1, " ", 1);
+		dado->width -= 1;
+		dado->ritorno += 1;
+	}
+}
+
 int		perct(t_mastronzo *dado)
 {
 	if (dado->width == 0)
@@ -58,21 +70,14 @@ int		perct(t_mastronzo *dado)
 	}
 	else if (dado->meno == 1)
 	{
-		write(1, "%", 1);
-		dado->ritorno += 1;
-		while (dado->width != 1)
-		{
-			write(1, " ", 1);
-			dado->width -= 1;
-			dado->ritorno += 1;
-		}
+		split_perct(dado);
 	}
 	else
 		zero(dado);
 	return (1);
 }
 
-void		volare(int car, int sing, t_mastronzo *dado)
+void	volare(int car, int sing, t_mastronzo *dado)
 {
 	if (sing == 1)
 	{

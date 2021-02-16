@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 11:17:56 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/12 16:49:46 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/16 11:38:09 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,9 @@ int		esa_man(va_list lista, t_mastronzo *dado)
 	char	*str_num;
 	int		c;
 	int		i;
+	int		a;
 
+	a = 0;
 	c = 0;
 	i = va_arg(lista, int);
 	str_num = ft_itoa_esa(i);
@@ -64,7 +66,12 @@ int		esa_man(va_list lista, t_mastronzo *dado)
 			str_num[c] = str_num[c] - 32;
 		c++;
 	}
-	prima_fase_stampa(str_num, dado);
+	if (i == 0)
+		a = zero_num(dado);
+	else
+		prima_fase_stampa(str_num, dado);
+	if (a == 1)
+		prima_fase_stampa(str_num, dado);
 	free(str_num);
 	return (1);
 }

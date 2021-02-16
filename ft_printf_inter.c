@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 15:58:09 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/14 18:05:52 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/16 11:03:56 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ void	spaziatura4_neg(char *str, t_mastronzo *dado)
 	}
 	dado->ritorno += 1;
 	write(1, "-", 1);
-	dado->precisione += 1;
-	while (dado->precisione-- != ft_strlen(str))
+	while (dado->precisione-- != (ft_strlen(str) - 1))
 	{
 		write(1, "0", 1);
 		dado->ritorno += 1;
@@ -36,12 +35,10 @@ void	spaziatura4_neg(char *str, t_mastronzo *dado)
 
 void	spaziatura2_neg(char *str, t_mastronzo *dado)
 {
-	if (dado->precisione == 0)
-		prec_with(dado);
-	else if (dado->zero == 1 && dado->precisione == -1 &&
+	if (dado->zero == 1 && dado->precisione <= -1 &&
 		dado->width > ft_strlen(str))
 		zeroo_neg(str, dado);
-	else if (dado->precisione <= ft_strlen(str))
+	else if (dado->precisione <= (ft_strlen(str) - 1))
 	{
 		if (dado->width >= ft_strlen(str))
 		{
@@ -64,9 +61,8 @@ void	spaziatura1_neg(char *str, t_mastronzo *dado)
 	backup = dado->precisione;
 	write(1, "-", 1);
 	dado->ritorno += 1;
-	dado->precisione += 1;
 	dado->width -= 1;
-	while (dado->precisione-- != ft_strlen(str))
+	while (dado->precisione-- != (ft_strlen(str) - 1))
 	{
 		write(1, "0", 1);
 		dado->ritorno += 1;
@@ -86,9 +82,7 @@ void	prima_fase_stampa_neg(char *str, t_mastronzo *dado)
 {
 	if (dado->meno == 1)
 	{
-		if (dado->precisione == 0)
-			prec_with(dado);
-		else if (dado->precisione <= ft_strlen(str))
+		if (dado->precisione <= (ft_strlen(str) - 1))
 		{
 			ft_stampo_stringhe(str, dado);
 			if (dado->width >= ft_strlen(str))
@@ -111,12 +105,18 @@ int		interi(va_list lista, t_mastronzo *dado)
 {
 	char	*str_num;
 	int		i;
+	int		a;
 
+	a = 0;
 	i = va_arg(lista, int);
 	str_num = ft_itoa(i);
 	if (str_num[0] == '-')
 		prima_fase_stampa_neg(str_num, dado);
+	else if (str_num[0] == '0')
+		a = zero_num(dado);
 	else
+		prima_fase_stampa(str_num, dado);
+	if (a == 1)
 		prima_fase_stampa(str_num, dado);
 	free(str_num);
 	return (1);

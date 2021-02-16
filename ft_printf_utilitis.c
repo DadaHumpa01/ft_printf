@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 10:53:17 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/13 16:27:47 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/16 11:40:55 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		ft_strlen(const char *str)
 	return (i);
 }
 
-void		reset(t_mastronzo *dado)
+void	reset(t_mastronzo *dado)
 {
 	dado->width = 0;
 	dado->precisione = -1;

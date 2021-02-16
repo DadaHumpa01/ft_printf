@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 09:15:59 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/14 16:32:16 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/02/16 12:22:18 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int					width(const char *str, size_t i, t_mastronzo *dado,
 						va_list lista);
 void				volare(int car, int sing, t_mastronzo *dado);
 void				reset(t_mastronzo *dado);
-void				test(char *str, t_mastronzo *dado, size_t i);
+void				test(char *str, t_mastronzo *dado);
 int					perct(t_mastronzo *dado);
 void				prec_with(t_mastronzo *dado);
 void				prima_fase_stampa(char *str, t_mastronzo *dado);
@@ -57,5 +57,7 @@ void				zeroo(char *str, t_mastronzo *dado);
 char				*ft_strdup(const char *s1);
 int					ft_stampo_stringhe_neg(char *str, t_mastronzo *dado);
 void				zeroo_neg(char *str, t_mastronzo *dado);
+int					zero_num(t_mastronzo *dado);
+void				stampa_fino_a_prec(char *str, t_mastronzo *dado, size_t i);
 
 #endif

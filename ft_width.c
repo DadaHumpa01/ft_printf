@@ -6,16 +6,16 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 10:36:49 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/16 11:42:02 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/24 11:01:56 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		width(const char *str, size_t i, t_mastronzo *dado, va_list lista)
+int	width(const char *str, size_t i, t_mastronzo *dado, va_list lista)
 {
-	int val;
-	int stop;
+	int	val;
+	int	stop;
 
 	stop = 0;
 	val = 0;

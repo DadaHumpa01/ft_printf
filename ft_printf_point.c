@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 16:45:32 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/16 11:39:01 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/24 10:56:49 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	point_flag(char *str, t_mastronzo *dado)
 		point_flag3(dado);
 }
 
-int		pointer(va_list lista, t_mastronzo *dado)
+int	pointer(va_list lista, t_mastronzo *dado)
 {
 	unsigned long	car;
 	char			*str;

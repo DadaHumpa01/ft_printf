@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 11:17:56 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/16 11:38:09 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/24 10:55:15 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	prec_with(t_mastronzo *dado)
 	return ;
 }
 
-int		esa_man(va_list lista, t_mastronzo *dado)
+int	esa_man(va_list lista, t_mastronzo *dado)
 {
 	char	*str_num;
 	int		c;

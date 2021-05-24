@@ -6,13 +6,13 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 09:07:46 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/16 11:39:59 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/24 10:54:03 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		flag_ricerca(const char *str, size_t i, t_mastronzo *dado,
+int	flag_ricerca(const char *str, size_t i, t_mastronzo *dado,
 			va_list lista)
 {
 	while (str[i] == '0' || str[i] == '-')
@@ -30,7 +30,7 @@ int		flag_ricerca(const char *str, size_t i, t_mastronzo *dado,
 	return (i);
 }
 
-int		ricercatore(const char *str, size_t i, va_list lista, t_mastronzo *dado)
+int	ricercatore(const char *str, size_t i, va_list lista, t_mastronzo *dado)
 {
 	if (str[i] == 'c')
 		carattere(lista, dado);
@@ -55,7 +55,7 @@ int		ricercatore(const char *str, size_t i, va_list lista, t_mastronzo *dado)
 
 void	iter(const char *str, va_list lista, t_mastronzo *dado)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != 0)
@@ -75,10 +75,10 @@ void	iter(const char *str, va_list lista, t_mastronzo *dado)
 	}
 }
 
-int		ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list		lista;
-	t_mastronzo dado;
+	t_mastronzo	dado;
 
 	va_start(lista, str);
 	dado.ritorno = 0;

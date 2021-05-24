@@ -6,15 +6,15 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 14:44:35 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/16 12:23:17 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/24 11:01:09 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_stampo_stringhe_neg(char *str, t_mastronzo *dado)
+int	ft_stampo_stringhe_neg(char *str, t_mastronzo *dado)
 {
-	size_t i;
+	size_t	i;
 
 	i = 1;
 	while (str[i] != '\0')
@@ -38,7 +38,7 @@ void	zeroo_neg(char *str, t_mastronzo *dado)
 	ft_stampo_stringhe_neg(str, dado);
 }
 
-int		zero_num(t_mastronzo *dado)
+int	zero_num(t_mastronzo *dado)
 {
 	if (dado->precisione == 0)
 	{

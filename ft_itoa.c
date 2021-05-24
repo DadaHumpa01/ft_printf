@@ -6,15 +6,15 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 16:50:08 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/15 10:49:43 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/24 10:49:27 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		lennum(int num)
+int	lennum(int num)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (num == 0)
@@ -61,7 +61,8 @@ char	*ft_itoa(int num)
 		neg += 1;
 		n = num * (-1);
 	}
-	if (!(str = malloc(sizeof(char) * (lenim + 1))))
+	str = malloc(sizeof(char) * (lenim + 1));
+	if (str != NULL)
 		return (NULL);
 	ft_write(lenim, neg, n, str);
 	return (str);

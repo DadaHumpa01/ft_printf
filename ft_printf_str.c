@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 13:00:53 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/16 12:20:04 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/24 10:57:01 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ void	test(char *str, t_mastronzo *dado)
 	}
 }
 
-int		putstr(va_list lista, t_mastronzo *dado)
+int	putstr(va_list lista, t_mastronzo *dado)
 {
 	char	*str;
 	int		f;

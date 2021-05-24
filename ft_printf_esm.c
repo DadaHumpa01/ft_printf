@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 11:18:02 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/16 11:02:55 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/24 10:56:09 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	spaziatura4(char *str, t_mastronzo *dado)
 
 void	spaziatura2(char *str, t_mastronzo *dado)
 {
-	if (dado->zero == 1 && dado->precisione <= -1 &&
-		dado->width > ft_strlen(str))
+	if (dado->zero == 1 && dado->precisione <= -1
+		&& dado->width > ft_strlen(str))
 		zeroo(str, dado);
 	else if (dado->precisione <= ft_strlen(str))
 	{
@@ -53,7 +53,7 @@ void	spaziatura2(char *str, t_mastronzo *dado)
 
 void	spaziatura1(char *str, t_mastronzo *dado)
 {
-	int backup;
+	int	backup;
 
 	backup = dado->precisione;
 	while (dado->precisione-- != ft_strlen(str))
@@ -95,7 +95,7 @@ void	prima_fase_stampa(char *str, t_mastronzo *dado)
 		spaziatura2(str, dado);
 }
 
-int		esa_min(va_list lista, t_mastronzo *dado)
+int	esa_min(va_list lista, t_mastronzo *dado)
 {
 	char	*str_num;
 	int		i;

@@ -6,15 +6,15 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 10:53:17 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/16 11:40:55 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/24 11:01:37 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_stampo_stringhe(const char *str, t_mastronzo *dado)
+int	ft_stampo_stringhe(const char *str, t_mastronzo *dado)
 {
-	size_t c;
+	size_t	c;
 
 	c = 0;
 	while (str[c] != 0)
@@ -25,9 +25,9 @@ int		ft_stampo_stringhe(const char *str, t_mastronzo *dado)
 	return (1);
 }
 
-int		ft_strlen(const char *str)
+int	ft_strlen(const char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')

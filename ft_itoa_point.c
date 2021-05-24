@@ -6,15 +6,15 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 16:38:47 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/01/29 18:18:52 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/24 10:52:23 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		num_it(long num)
+int	num_it(long num)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (num == 0)
@@ -55,7 +55,8 @@ char	*ft_itoa_point(unsigned long num)
 
 	lenim = num_it(num);
 	n = num;
-	if (!(str = malloc(sizeof(char) * (lenim + 1))))
+	str = malloc(sizeof(char) * (lenim + 1));
+	if (str == NULL)
 		return (NULL);
 	ft_write_me(lenim, n, str);
 	return (str);

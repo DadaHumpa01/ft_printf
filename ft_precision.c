@@ -6,16 +6,16 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 15:09:09 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/11 12:53:46 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/24 10:53:25 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		mod_atoi(const char *str, t_mastronzo *dado, size_t i, int type)
+int	mod_atoi(const char *str, t_mastronzo *dado, size_t i, int type)
 {
-	int stop;
-	int res;
+	int	stop;
+	int	res;
 
 	stop = 0;
 	res = 0;
@@ -33,10 +33,10 @@ int		mod_atoi(const char *str, t_mastronzo *dado, size_t i, int type)
 	return (i);
 }
 
-int		precision(const char *str, t_mastronzo *dado, size_t i, va_list lista)
+int	precision(const char *str, t_mastronzo *dado, size_t i, va_list lista)
 {
-	int val;
-	int stop;
+	int	val;
+	int	stop;
 
 	stop = 0;
 	val = 0;

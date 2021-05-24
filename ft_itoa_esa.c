@@ -6,15 +6,15 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 11:16:26 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/12 10:59:37 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/24 10:47:58 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		linnum(unsigned int num)
+int	linnum(unsigned int num)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (num == 0)
@@ -55,7 +55,8 @@ char	*ft_itoa_esa(unsigned int num)
 
 	lenim = linnum(num);
 	n = num;
-	if (!(str = malloc(sizeof(char) * (lenim + 1))))
+	str = malloc(sizeof(char) * (lenim + 1));
+	if (!str)
 		return (NULL);
 	ft_write_itoa(lenim, n, str);
 	return (str);

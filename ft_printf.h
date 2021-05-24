@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 09:15:59 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/02/16 12:22:18 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/24 10:54:44 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef	struct		s_mastronzo
+typedef struct s_mastronzo
 {
 	int				width;
 	int				precisione;
